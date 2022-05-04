@@ -1,17 +1,17 @@
 var JSFUNCTIONS = {
 
     swap: function swap(a,b){
-        a = temp;
-        b = a;
-        a = temp;
+        var temp = a;
+        a = b;
+        b = temp;
         console.log(a,b);
     },
 
-    print_range: function print_range(){
-        for( var i = 0; i < 20; i++){
+    print_range: function print_range(I,r){
+        for(i = I; i < r; i++){
             console.log(i);
         }
-    }
+    },
 
 }
 
@@ -28,14 +28,11 @@ $(document).ready(function(){
     // console.log("Ready to code");
     $(document).on('click', 'button', function(){
 
-        // $(this).prev().toggle();
         func = $(this).attr('funcname');
-        console.log(func)
-        // console.log(typeof(func()))
-        // // console.log(func('First', 'Second'))
         
-        // console.log(JSFUNCTIONS[func]) <----- how to get the js code to console
-        JSFUNCTIONS[func]()
+        $(this).prev().html('<span class="code">' + JSFUNCTIONS[func] + '</span>')
+        $(this).prev().toggle();
+
 
     })
     // 'input[name="F_Name"'
