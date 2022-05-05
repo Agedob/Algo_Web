@@ -35,21 +35,26 @@ var JSFUNCTIONS = {
 
 $(document).ready(function(){
 
-    // console.log("Ready to code");
-    // $(document).on('click', 'button', function(){
-        $('form').submit(function(){
-            console.log($(this))
-            console.log($(this)[0][1].value)
-            console.log($(this)[0][0].value)
-            console.log($(this)[0][2].attributes[0].value)
+    // console.log("Ready to code")
 
-        // func = $(this).attr('funcname');
-        // // console.log($(this).siblings())
+
+        $('form').submit(function(){
+            var form_temp = $(this).html()
+            var input_1 = $(this)[0][0].value
+            var input_2 = $(this)[0][1].value
+            var func_name = $(this)[0][2].attributes[0].value
+            // $(this).html(form_temp)
+            $(this).children()[2].append(JSFUNCTIONS[func_name])
+            // $(this).children()[2].html()
+            return false
+    })
+    
+    $(document).on('click', 'button', function(){
+        // console.log($(this).siblings())
         // $()
         // $(this).prev().html('<span class="code">' + JSFUNCTIONS[func] + '</span>')
-        // $(this).prev().toggle();
+        $(this).prev().toggle();
 
-        return false
     })
     // 'input[name="F_Name"'
 
