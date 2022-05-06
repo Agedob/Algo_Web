@@ -5,6 +5,7 @@
     vertical-align: top;
     text-align: center;
     border: 1px solid green;
+    font-weight: 200;
     font-family: 'Monospace', 'Georgia', 'serif', ; /* needs fixing */
 }
 
