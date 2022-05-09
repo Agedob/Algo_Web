@@ -38,12 +38,12 @@ $(document).ready(function(){
     // console.log("Ready to code")
 
     $('form').submit(function(){
-        var form_temp = $(this).html();
-        var input_1 = $(this)[0][0].value;
-        var input_2 = $(this)[0][1].value;
-        var btn_name = $(this)[0][2].attributes[0].value;
+        const form_temp = $(this).html();
+        const input_1 = $(this)[0][0].value;
+        const input_2 = $(this)[0][1].value;
+        const btn_name = $(this)[0][2].attributes[0].value;
 
-        JSFUNCTIONS(btn_name(input_1,input_2))
+        console.log(JSFUNCTIONS[btn_name](input_1,input_2))
         
         // $(this).children()[2].append(JSFUNCTIONS[btn_name]);
         // console.log(btn_name);
