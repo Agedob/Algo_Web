@@ -33,6 +33,8 @@ var JSFUNCTIONS = {
 
 
 
+
+
 $(document).ready(function(){
 
     // console.log("Ready to code")
@@ -43,13 +45,10 @@ $(document).ready(function(){
         const input_2 = $(this)[0][1].value;
         const btn_name = $(this)[0][2].attributes[0].value;
 
-        console.log(JSFUNCTIONS[btn_name](input_1,input_2))
+        JSFUNCTIONS[btn_name](input_1,input_2)
+        $(this).html(form_temp)
         
-        // $(this).children()[2].append(JSFUNCTIONS[btn_name]);
-        // console.log(btn_name);
-        // console.lot($(`button[funcname=${btn_name}]`));
-        // console.log(btn_name);
-
+        $(this).children('div').toggle()
         return false
 })
     
