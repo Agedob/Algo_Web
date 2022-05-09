@@ -37,25 +37,26 @@ $(document).ready(function(){
 
     // console.log("Ready to code")
 
+    $('form').submit(function(){
+        var form_temp = $(this).html();
+        var input_1 = $(this)[0][0].value;
+        var input_2 = $(this)[0][1].value;
+        var btn_name = $(this)[0][2].attributes[0].value;
 
-        $('form').submit(function(){
-            var form_temp = $(this).html()
-            var input_1 = $(this)[0][0].value
-            var input_2 = $(this)[0][1].value
-            var func_name = $(this)[0][2].attributes[0].value
-            // $(this).html(form_temp)
-            $(this).children()[2].append(JSFUNCTIONS[func_name])
-            // $(this).children()[2].html()
-            return false
-    })
+        JSFUNCTIONS(btn_name(input_1,input_2))
+        
+        // $(this).children()[2].append(JSFUNCTIONS[btn_name]);
+        // console.log(btn_name);
+        // console.lot($(`button[funcname=${btn_name}]`));
+        // console.log(btn_name);
+
+        return false
+})
     
-    $(document).on('click', 'button', function(){
-        // console.log($(this).siblings())
-        // $()
-        // $(this).prev().html('<span class="code">' + JSFUNCTIONS[func] + '</span>')
-        $(this).prev().toggle();
+    // $(document).on('click', 'button', function(){
+    //     $(this).prev().toggle();
+    // })
 
-    })
     // 'input[name="F_Name"'
 
 })
