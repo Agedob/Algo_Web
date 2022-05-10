@@ -1,12 +1,14 @@
 import {_} from "./underscore.js";
 import { JSFUNCTIONS } from "./algorithums.js";
 
-var evens = _.filter([1, 2, 3, 4, 5, 6,7,8,9,10], function(num){ return num % 2 == 0; });
-console.log(evens); 
-var odds = _.filter([1, 2, 3, 4, 5, 6,7,8,9,10], function(num){ return num % 2 != 0; });
-console.log(odds); 
-var mtest = _.map([1, 2, 3], function(num){ return num * 3; });
+// var evens = _.filter([1, 2, 3, 4, 5, 6,7,8,9,10], function(num){ return num % 2 == 0; });
+// console.log(evens); 
+// var odds = _.filter([1, 2, 3, 4, 5, 6,7,8,9,10], function(num){ return num % 2 != 0; });
+// console.log(odds); 
+var mtest = _.map([1, 2, "a"], function(num){ return num * 3; });
 console.log(mtest)
+var mtest2 = _.map({one: 1, two: 2, three: 3, four: "a",}, function(num, key){ return num * 3; });
+console.log(mtest2);
 
 $(document).ready(function(){
 

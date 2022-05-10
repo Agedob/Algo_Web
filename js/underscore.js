@@ -3,9 +3,12 @@
 var _ = {
     map: function(arr, callback) {
         let the_return = [];
-        for(var i = 0; i < arr.length; i++){
-            the_return.push(callback(arr[i]));
-        }
+            // for(var i = 0; i < arr.length; i++){
+            //     the_return.push(callback(arr[i]));
+            // }
+            for (const keys in arr){
+                the_return.push(callback(arr[keys]))
+            }
         return the_return
     },
     reduce: function() { 
