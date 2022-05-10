@@ -27,7 +27,25 @@ var JSFUNCTIONS = {
         }
         console.log("They match")
 
-    }
+    },
+
+    // write for loop for multiples of 3 from -300 - 0 !-3 || -6
+    multiple_of_three: function multiple_of_three(){
+        for(let i = -300; i < 0; i++){
+            if( i % 3 >= 0 && i != -3 && i != -6){
+                console.log(i)
+            }
+        }
+    },
+
+    // Use a while loop to print 0 100
+    while_loop: function while_loop(){
+        let i = 0;
+        while (i < 100) {
+            console.log(i);
+            i++;
+        };
+    },
 }
 
 
