@@ -47,8 +47,9 @@ $(document).ready(function(){
 
         JSFUNCTIONS[btn_name](input_1,input_2)
         $(this).html(form_temp)
+        $(this).children('div').slideToggle('slow')
+        $(this).children('div').html(String(JSFUNCTIONS[btn_name]))
         
-        $(this).children('div').toggle()
         return false
 })
     
