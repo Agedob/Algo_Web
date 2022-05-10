@@ -15,10 +15,11 @@ import { JSFUNCTIONS } from "./algorithums.js";
 // 16
 // console.log(sum)
 var even = _.find([1, 7, 3, 9, 5, 7, 8], function(num){ return num % 2 == 0; });
-// => 4
-console.log(even)
-
-
+// => 8
+console.log(even);
+var odds = _.reject([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], function(num){ return num % 2 == 0; });
+// => [1, 3, 5, 7, 9, 11]
+console.log(odds);
 
 $(document).ready(function(){
 

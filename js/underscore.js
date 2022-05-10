@@ -34,7 +34,7 @@ var _ = {
         // _.find(list, predicate, [context]) 
     // Looks through each value in the list, returning the first one that passes a truth test (predicate), or undefined if no value passes the test. The function returns as soon as it finds an acceptable element, and doesn't traverse the entire list. predicate is transformed through iteratee to facilitate shorthand syntaxes.
         let i = 0
-        while (callback(arr[i]) != true) {
+        while (!(callback(arr[i]))) {
             // console.log(arr[i]);
             i++  
             if ( i == arr.length){
@@ -43,15 +43,6 @@ var _ = {
             }
         }
 
-      
-        // for ( const keys in arr){
-        //     console.log(callback(arr[keys]));
-        //     if(callback(arr[keys]) == true){
-        //         // console.log(arr[keys]);
-        //         return arr[keys]
-        //     }
-        // }
-        console.log('Worked')
         return arr[i]
     },
 
@@ -68,8 +59,18 @@ var _ = {
             return the_return
     },
 
-    reject: function() {
-      // code here;
+    reject: function(arr, callback) {
+        // _.reject(list, predicate, [context])
+    // Returns the values in list without the elements that the truth test (predicate) passes. The opposite of filter. predicate is transformed through iteratee to facilitate shorthand syntaxes.
+
+        let the_return = [];
+        for (const keys in arr){
+            if ( callback(arr[keys]) == false){
+                the_return.push(arr[keys])
+            }
+        }
+        return the_return
+        
     }
 
   }
