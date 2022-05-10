@@ -14,7 +14,9 @@ import { JSFUNCTIONS } from "./algorithums.js";
 // var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 10);
 // 16
 // console.log(sum)
-
+var even = _.find([1, 7, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+// => 4
+console.log(even)
 
 
 

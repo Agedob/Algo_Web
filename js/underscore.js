@@ -2,6 +2,9 @@
     
 var _ = {
     map: function(arr, callback) {
+        // _.map(list, iteratee, [context]) 
+    // Produces a new array of values by mapping each value in list through a transformation function (iteratee). The iteratee is passed three arguments: the value, then the index (or key) of the iteration, and finally a reference to the entire list.
+
         let the_return = [];
             // for(var i = 0; i < arr.length; i++){
             //     the_return.push(callback(arr[i]));
@@ -11,7 +14,12 @@ var _ = {
             }
         return the_return
     },
-    reduce: function(arr, callback, varx) { 
+
+    reduce: function(arr, callback, varx) {
+        // _.reduce(list, iteratee, [memo], [context]) 
+    // Also known as inject and foldl, reduce boils down a list of values into a single value. Memo is the initial state of the reduction, and each successive step of it should be returned by iteratee. The iteratee is passed four arguments: the memo, then the value and index (or key) of the iteration, and finally a reference to the entire list.
+    // If no memo is passed to the initial invocation of reduce, the iteratee is not invoked on the first element of the list. The first element is instead passed as the memo in the invocation of the iteratee on the next element in the list.
+
         if (varx == undefined){
             varx = arr.shift();
         };
@@ -21,11 +29,30 @@ var _ = {
         }
         return the_return
     },
-    find: function() {   
-      // code here;
+
+    find: function(arr, callback) {
+        // _.find(list, predicate, [context]) 
+    // Looks through each value in the list, returning the first one that passes a truth test (predicate), or undefined if no value passes the test. The function returns as soon as it finds an acceptable element, and doesn't traverse the entire list. predicate is transformed through iteratee to facilitate shorthand syntaxes.
+        // let i = 0
+        // while (callback(arr[i]) == false) {
+        //     callback(arr[i]);
+        //     console.log(arr[i]);
+        //     i++
+        // }
+        for ( const keys in arr){
+            if(callback(arr[keys]) == true){
+                // console.log(arr[keys]);
+                return arr[keys]
+            }
+        }
+        console.log('failed')
+        return undefined
     },
 
-    filter: function(arr, check) { 
+    filter: function(arr, check) {
+        // _.filter(list, predicate, [context]) 
+    // Looks through each value in the list, returning an array of all the values that pass a truth test (predicate). predicate is transformed through iteratee to facilitate shorthand syntaxes.
+
         let the_return =[];
         for(var i = 0; i < arr.length; i++) {
                 if(check(arr[i]) == true){
@@ -35,18 +62,11 @@ var _ = {
             return the_return
     },
 
-    reject: function() { 
+    reject: function() {
       // code here;
     }
+
   }
 
 export {_}
-
-//   var evens = _.filter([1, 2, 3, 4, 5, 6,7,8,9,10], function(num){ return num % 2 == 0; });
-//   console.log(evens); 
-//   var odds = _.filter([1, 2, 3, 4, 5, 6,7,8,9,10], function(num){ return num % 2 != 0; });
-//   console.log(odds); 
-//   var mtest = _.map([1, 2, 3], function(num){ return num * 3; });
-//   console.log(mtest)
-// => [3, 6, 9]
 
