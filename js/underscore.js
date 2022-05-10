@@ -11,8 +11,15 @@ var _ = {
             }
         return the_return
     },
-    reduce: function() { 
-      // code here;
+    reduce: function(arr, callback, varx) { 
+        if (varx == undefined){
+            varx = arr.shift();
+        };
+        let the_return = varx;
+        for (const keys in arr){
+            the_return = callback(arr[keys],the_return);
+        }
+        return the_return
     },
     find: function() {   
       // code here;
