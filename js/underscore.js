@@ -1,4 +1,4 @@
-
+// http://underscorejs.org/#each
     
 var _ = {
     map: function(arr, callback) {
@@ -6,9 +6,6 @@ var _ = {
     // Produces a new array of values by mapping each value in list through a transformation function (iteratee). The iteratee is passed three arguments: the value, then the index (or key) of the iteration, and finally a reference to the entire list.
 
         let the_return = [];
-            // for(var i = 0; i < arr.length; i++){
-            //     the_return.push(callback(arr[i]));
-            // }
             for (const keys in arr){
                 the_return.push(callback(arr[keys]))
             }
@@ -77,3 +74,22 @@ var _ = {
 
 export {_}
 
+// var evens = _.filter([1, 2, 3, 4, 5, 6,7,8,9,10], function(num){ return num % 2 == 0; });
+// console.log(evens); 
+// var odds = _.filter([1, 2, 3, 4, 5, 6,7,8,9,10], function(num){ return num % 2 != 0; });
+// console.log(odds); 
+// var mtest = _.map([1, 2, "a"], function(num){ return num * 3; });
+// console.log(mtest)
+// var mtest2 = _.map({one: 1, two: 2, three: 3, four: "a",}, function(num, key){ return num * 3; });
+// console.log(mtest2);
+// var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);
+// // => 6
+// var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 10);
+// // => 16
+// console.log(sum)
+// var even = _.find([1, 7, 3, 9, 5, 7, 8], function(num){ return num % 2 == 0; });
+// // => 8
+// console.log(even);
+// var odds = _.reject([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], function(num){ return num % 2 == 0; });
+// // => [1, 3, 5, 7, 9, 11]
+// console.log(odds);
