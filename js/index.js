@@ -1,4 +1,4 @@
-import {_} from "./underscore.js";
+import { _ } from "./underscore.js";
 import { JSFUNCTIONS } from "./algorithums.js";
 
 $(document).ready(function(){
@@ -18,7 +18,7 @@ $(document).ready(function(){
         
         return false
     })
-    
+    JSFUNCTIONS.number_flip(123);
     // $(document).on('click', 'button', function(){
     //     $(this).prev().toggle();
     // })

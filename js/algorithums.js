@@ -1,3 +1,4 @@
+import { values } from "underscore";
 
 const JSFUNCTIONS = {
 
@@ -46,6 +47,28 @@ const JSFUNCTIONS = {
             console.log(i);
             i++;
         };
+    },
+
+    // 123-number-flip
+    number_flip: (num) => {
+        var new_num = Array.from(String(num), Number)
+        var change = 3
+        var the_return = 'something'
+        new_num.sort();
+        new_num[0] = change;
+        // for (let i = 0; i < new_num.length; i++){
+        //     the_return += toString(new_num[i]);
+        //     console.log(new_num[i])
+        // }
+        console.log(the_return)
+        // for ( let i = 0; i < new_num.length; i++){
+        //     if(new_num[i] < change){
+        //         new_num[i] = change
+        //         the_return = toString(new_num)
+        //         console.log(the_return)
+        //         return the_return
+        //     }
+        // }
     },
     
 };
