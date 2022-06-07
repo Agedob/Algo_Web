@@ -69,14 +69,25 @@ const JSFUNCTIONS = {
    },
 
    edit_distance: (first_word, second_word) => {
-      const the_return = "something";
+      const the_return = [];
       //   console.log(first_word, second_word);
-      for (let x = 0; x < first_word.length; x++) {
-         if (first_word[x] == undefined) {
-            break;
+      for (let i = 0; i < first_word.length; i++) {
+         for (let j = 0; j < second_word.length; j++) {
+            if (first_word[i] == second_word[j]) {
+               the_return.push(first_word[i]);
+               break;
+            }
          }
       }
+      let lengthDifference = first_word.length - second_word.length;
+      if (lengthDifference > 0) {
+         lengthDifference = first_word.length - the_return.length;
+      } else {
+         lengthDifference = second_word.length - the_return.length;
+      }
+      console.log(lengthDifference);
    },
 };
+// JSFUNCTIONS.edit_distance("kitten", "sitting");
 
 export { JSFUNCTIONS };
